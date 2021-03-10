@@ -1,7 +1,9 @@
 Flask Payment Web API
 =====================
 
-Flask Web API I was asked to create as part of a test, does not include the 'MOD 10 algorithm' check for credit card numbers (assume they are correct for test purposes).
+Flask Web API I was asked to create as part of a test, does not include the 'MOD 10 algorithm' check for credit card numbers (assume they are correct for test purposes). Written in Python 3.9.
+
+To run the app, download the files, install the External Libraries listed below (manually or using provided Pipfile), and then run the following command in a shell: `flask run`
 
 Functions
 ---------
