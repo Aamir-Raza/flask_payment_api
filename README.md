@@ -1,5 +1,7 @@
-Module payment_app
-==================
+Flask Payment Web API
+=====================
+
+Flask Web API I was asked to create as part of a test, does not include the 'MOD 10 algorithm' check for credit card numbers (assume they are correct for test purposes).
 
 Functions
 ---------
@@ -12,3 +14,8 @@ Functions
     - ExpirationDate (mandatory, DateTime, it cannot be in the past)
     - SecurityCode (optional, string, 3 digits)
     - Amount (mandatory decimal, positive amount) - Capped to anything under a million
+
+External Libraries
+-------------------
+*   Flask-WTF==0.14.3
+*   WTForms-Components==0.10.5
