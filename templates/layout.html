@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    {% block content %}
+
+    <div class="form-wrapper">
+      <h2 class="title">Payment Form</h2>
+
+      <form method="POST" action="{{ url_for('ProcessPayment') }}">
+
+        {% if form.errors %}
+            <ul class="errors">
+            {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                {% for error in field_errors %}
+                    <li>{{ form[field_name].label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+          <fieldset class="form-field">
+              {{ form.CreditCardNumber.label }}
+              {{ form.CreditCardNumber(size=20) }}
+          </fieldset>
+
+          <fieldset class="form-field">
+              {{ form.CardHolder.label }}
+              {{ form.CardHolder }}
+          </fieldset>
+
+          <fieldset class="form-field">
+              {{ form.ExpirationDate.label }}
+              {{ form.ExpirationDate }}
+          </fieldset>
+
+          <fieldset class="form-field">
+              {{ form.SecurityCode.label }}
+              {{ form.SecurityCode }}
+          </fieldset>
+
+          <fieldset class="form-field">
+              {{ form.Amount.label }}
+              {{ form.Amount }}
+          </fieldset>
+
+          {{ form.submit }}
+
+          {{ form.csrf_token }}
+
+          <p>{{ output }}</p>
+
+
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+
+</html>
